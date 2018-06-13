@@ -8,7 +8,7 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
 import normalize from './styled-components/normalize'
-import globalStyles from './styled-components/global'
+import { globalStyles } from './styled-components/global'
 
 injectGlobal`
   ${normalize}
