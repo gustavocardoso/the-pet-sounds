@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from './App'
 
-import registerServiceWorker from './registerServiceWorker'
+// import registerServiceWorker from './registerServiceWorker'
 
 import { GlobalStyle } from './styled-components/global'
 
@@ -16,4 +16,4 @@ ReactDOM.render(
     </div>
   </Router>
   , document.getElementById('root'))
-registerServiceWorker()
+// registerServiceWorker()
