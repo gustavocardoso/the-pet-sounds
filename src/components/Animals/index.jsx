@@ -14,7 +14,8 @@ class Animals extends Component {
     this.state = {
       zoo,
       isAudioLoaded: false,
-      isShuffling: false
+      isShuffling: false,
+      animal: null
     }
 
     this.playSound = this.playSound.bind(this)
@@ -28,7 +29,9 @@ class Animals extends Component {
 
   shuffle () {
     this.setState({ isShuffling: true })
-    console.log('shuffle')
+    const randomKey = Math.floor(Math.random() * this.state.zoo.length)
+    this.setState({ animal: this.state.zoo[randomKey] })
+    this.setState({ isShuffling: false })
   }
 
   render () {

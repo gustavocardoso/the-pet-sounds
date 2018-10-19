@@ -11,10 +11,6 @@ class ControlPanel extends Component {
     this.handleShuffle = this.handleShuffle.bind(this)
   }
 
-  componentDidMount () {
-    console.log('mounted')
-  }
-
   handlePlay () {
     this.props.playSound()
   }
@@ -27,12 +23,16 @@ class ControlPanel extends Component {
     return (
       <Controls>
         <ControlButton>
-          <PlayButton onClick={this.handlePlay} disabled={!this.props.isAudioLoaded}><Icon className='icon-play' /></PlayButton>
+          <PlayButton onClick={this.handlePlay} disabled={!this.props.isAudioLoaded}>
+            <Icon className='icon-play' />
+          </PlayButton>
           <ButtonText>Play</ButtonText>
         </ControlButton>
 
         <ControlButton>
-          <PlayButton onClick={this.handleShuffle} disabled={this.props.isShuffling}><Icon className='icon-refresh' /></PlayButton>
+          <PlayButton onClick={this.handleShuffle} disabled={this.props.isShuffling}>
+            <Icon className='icon-refresh' />
+          </PlayButton>
           <ButtonText>Shuffle</ButtonText>
         </ControlButton>
       </Controls>
