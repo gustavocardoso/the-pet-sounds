@@ -31,6 +31,7 @@ export const Screen = styled.section`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  padding: 2em;
 `
 
 const pulse = keyframes`
@@ -39,7 +40,7 @@ const pulse = keyframes`
   }
 
   50% {
-    transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.13, 1.13, 1.13);
   }
 
   to {
@@ -57,6 +58,6 @@ export const Title = styled.h1`
   animation: ${pulse} ${props => props.intro ? '5s' : '15s'} ease infinite;
 
   @media (min-width: 900px) {
-    font-size: 6em;
+    font-size: ${props => props.intro ? '6em' : '4em'};
   }
 `
