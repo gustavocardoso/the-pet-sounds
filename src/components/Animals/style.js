@@ -59,7 +59,7 @@ export const BasicButton = styled.button`
   margin: 0 1em;
   cursor: pointer;
 
-  &.disabled {
+  &:disabled {
     opacity: .5;
   }
 
