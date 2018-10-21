@@ -20,6 +20,7 @@ class Animals extends Component {
 
     this.playSound = this.playSound.bind(this)
     this.shuffle = this.shuffle.bind(this)
+    this.getRandomAnimal = this.getRandomAnimal.bind(this)
   }
 
   playSound () {
@@ -29,9 +30,19 @@ class Animals extends Component {
 
   shuffle () {
     this.setState({ isShuffling: true })
-    const randomKey = Math.floor(Math.random() * this.state.zoo.length)
-    this.setState({ animal: this.state.zoo[randomKey] })
+
+    const randomAnimal = this.getRandomAnimal()
+
+    if (randomAnimal) {
+      this.setState({ animal: randomAnimal })
+    }
+
     this.setState({ isShuffling: false })
+  }
+
+  getRandomAnimal () {
+    const randomKey = Math.floor(Math.random() * this.state.zoo.length)
+    return this.state.zoo[randomKey]
   }
 
   render () {
